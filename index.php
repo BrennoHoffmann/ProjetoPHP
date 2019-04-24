@@ -67,7 +67,7 @@ $produto = ["nome"=>"produto x", "preço"=>"50 pila parceiro", "descrição"=>"E
       <div class="card-body">
         <h5 class="card-title">Calça Jeans</h5>
         <p class="card-text">Calsa Jeans para todos os dias</p>
-        <a href="#" class="btn btn-primary">Comprar</a>
+        <a href="#" class="btn btn-primary"><?php echo $produto['preço']; ?></a>
       </div>
     </div>
     <div class="card" style="width: 14rem;">
@@ -75,7 +75,7 @@ $produto = ["nome"=>"produto x", "preço"=>"50 pila parceiro", "descrição"=>"E
       <div class="card-body">
         <h5 class="card-title">Tênis</h5>
         <p class="card-text">Tênis básico para todos os dias</p>
-        <a href="#" class="btn btn-primary">Comprar</a>
+        <a href="#" class="btn btn-primary"><?php echo $produto['preço']; ?></a>
       </div>
     </div>
   </div>
