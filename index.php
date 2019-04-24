@@ -1,6 +1,9 @@
 <?php
 $usuario = ["nome"=>"Brenno", "sobrenome"=>"Hoffmann"];
-$produto = ["nome"=>"produto x", "preço"=>"50 pila parceiro", "descrição"=>"Essa é a descrição"]
+$produtos = [
+  ["nome"=>"produto 1", "descrição"=>"Essa é a descrição", "preço"=>"50 pila parceiro", "img"=>"imagens/camisaBranca.jpg"],
+  ["nome"=>"produto 2", "descrição"=>"Essa é a outra descrição", "preço"=>"60 pila parceiro", "img"=>"imagens/calça.jpg"]
+];
 ?>
 <!doctype html>
 <html lang="en">
@@ -53,21 +56,25 @@ $produto = ["nome"=>"produto x", "preço"=>"50 pila parceiro", "descrição"=>"E
     </div>
   </div>
   <!-- Produtos -->
+  <?php
+    foreach($produtos as $produto){
+    ?>
   <div class="card-deck">
     <div class="card" style="width: 14rem;">
-      <img src="imagens/camisaBranca.jpg" class="card-img-top" alt="...">
+      <img src=<?php echo $produto['img']; ?> class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Camisa</h5>
-        <p class="card-text">Camisa básica para todos os dias</p>
+        <h5 class="card-title"><?php echo $produto['nome']; ?></h5>
+        <p class="card-text"><?php echo $produto['descrição']; ?></p>
         <a href="#" class="btn btn-primary"><?php echo $produto['preço']; ?></a>
       </div>
     </div>
-    <div class="card" style="width: 14rem;">
+    <?php } ?>
+    <!--           <div class="card" style="width: 14rem;">
       <img src="imagens/calça.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Calça Jeans</h5>
         <p class="card-text">Calsa Jeans para todos os dias</p>
-        <a href="#" class="btn btn-primary"><?php echo $produto['preço']; ?></a>
+        <a href="#" class="btn btn-primary"><?php //echo $produto['preço']; ?></a>
       </div>
     </div>
     <div class="card" style="width: 14rem;">
@@ -75,9 +82,9 @@ $produto = ["nome"=>"produto x", "preço"=>"50 pila parceiro", "descrição"=>"E
       <div class="card-body">
         <h5 class="card-title">Tênis</h5>
         <p class="card-text">Tênis básico para todos os dias</p>
-        <a href="#" class="btn btn-primary"><?php echo $produto['preço']; ?></a>
+        <a href="#" class="btn btn-primary"><?php //echo $produto['preço']; ?></a>
       </div>
-    </div>
+    </div>                -->
   </div>
 
   <div class="container">
